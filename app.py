@@ -4,7 +4,7 @@ import json
 from streamlit.components.v1 import html
 import pandas as pd
 
-colors_blue = [
+colors_red = [
     "#8B0000",  # Merah paling gelap
     "#B22222",
     "#DC143C",
@@ -35,7 +35,7 @@ def popup_function(feature):
 sorted_features = sorted(geojson_data['features'], key=lambda x: x['properties']['JUMLAH_PEN'], reverse=True)
 
 # Buat daftar warna sesuai urutan fitur yang diurutkan
-feature_colors = {feature['properties']['DESA']: colors_blue[i] for i, feature in enumerate(sorted_features)}
+feature_colors = {feature['properties']['DESA']: colors_red[i] for i, feature in enumerate(sorted_features)}
 
 # Membuat peta Folium
 m = folium.Map()
